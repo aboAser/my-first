@@ -1,0 +1,440 @@
+:root {
+  --main-color: #ff3c00;
+  --secondary-color: #ff3c00;
+  --dark-color: #2e3b4e;
+  --light-color: #fff;
+  --heading-font: "Bebas Neue", cursive;
+  --normal-font: "Open Sans", sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+span {
+  color: var(--secondary-color);
+}
+
+/*=========================
+========  Home  ==========
+ ========================== */
+.home {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url("../images/bannar.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.home .cover {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 1;
+}
+.home .container {
+  position: relative;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  margin-left: auto;
+}
+.home .container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+.header .logo img {
+  width: 40px;
+}
+.header .logo h2 {
+  font-family: var(--heading-font);
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin-left: 10px;
+  color: var(--light-color);
+}
+@media (max-width: 767px) {
+  .header .logo img {
+    width: 30px;
+  }
+  .header .logo h2 {
+    font-size: 20px;
+  }
+}
+.header .logo h2 span {
+  color: var(--main-color);
+}
+.menu {
+  font-size: 20px;
+  color: var(--light-color);
+  display: none;
+}
+.header ul li {
+  list-style: none;
+  display: inline-block;
+}
+.header ul li a {
+  text-decoration: none;
+  color: var(--light-color);
+  padding: 10px;
+  transition: 0.4s;
+}
+.header ul li a:hover {
+  color: var(--main-color);
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--light-color);
+  background-color: var(--main-color);
+  padding: 5px 16px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  transition: 0.4s;
+}
+.btn:hover {
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  background-color: transparent;
+  transform: scale(1.08);
+}
+@media (max-width: 767px) {
+  .header ul {
+    display: none;
+  }
+  .menu {
+    display: block;
+    position: relative;
+  }
+  .btn {
+    display: none;
+  }
+  .menu:hover {
+    color: var(--main-color);
+    transform: scale(1.08);
+  }
+  .menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 72px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .header ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+  }
+  .header ul li:last-child {
+    border-bottom: none;
+  }
+}
+@media (max-width: 767px) {
+}
+.landing {
+  position: relative;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: calc(100vh - 72px);
+  z-index: 4;
+}
+.landing .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--light-color);
+}
+.landing .text h1 {
+  padding: 15px 0;
+  font-size: 30px;
+  font-family: var(--normal-font);
+  text-transform: capitalize;
+}
+.landing .text h1 span {
+  color: var(--secondary-color);
+  font-family: var(--heading-font);
+  font-size: 40px;
+  letter-spacing: 4px;
+}
+@media (max-width: 767px) {
+  .landing .text {
+    width: 100%;
+  }
+  .landing .text h1 {
+    font-size: 20px;
+  }
+  .landing .text h1 span {
+    font-size: 30px;
+  }
+}
+
+/*=========================
+ ========  about  ==========
+ ========================== */
+.about {
+  background-color: var(--dark-color);
+  padding: 50px 0;
+  position: relative;
+}
+.about::after {
+  content: " ";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  border-radius: 50%;
+  background-color: var(--dark-color);
+  z-index: 1;
+}
+.about .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about .container .left {
+  width: 40%;
+}
+@media (max-width: 991px) {
+  .about .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .about .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .about .container .left {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .about .container .left {
+    width: 100%;
+  }
+}
+.about .container .left .content {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+.about .container .left .content i {
+  color: var(--main-color);
+  font-size: 30px;
+  align-self: center;
+  padding-right: 30px;
+}
+.about .container .left .content .text {
+  color: var(--light-color);
+}
+.about .container .left .content .text h2 {
+  padding-bottom: 20px;
+  font-family: var(--heading-font);
+  letter-spacing: 2px;
+}
+.about .container .left .content .text p {
+  font-family: var(--normal-font);
+  font-size: 15px;
+}
+.about .container .right {
+  width: 40%;
+}
+@media (max-width: 767px) {
+  .about .container .right {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .about .container .right {
+    width: 100%;
+  }
+}
+.about .container .right .content {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+.about .container .right .content i {
+  color: var(--main-color);
+  font-size: 30px;
+  align-self: center;
+  padding-right: 30px;
+}
+.about .container .right .content .text {
+  color: var(--light-color);
+}
+.about .container .right .content .text h2 {
+  padding-bottom: 20px;
+  font-family: var(--heading-font);
+  letter-spacing: 2px;
+}
+.about .container .right .content .text p {
+  font-family: var(--normal-font);
+  font-size: 15px;
+}
+/*=========================
+ ========  trips  ==========
+ ========================== */
+
+.trips {
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/01.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.trips .cover {
+  position: absolute;
+  background-color: rgba(168, 35, 18, 0.8);
+  width: 100%;
+  height: 100%;
+}
+.trips .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .trips .text {
+    width: 100%;
+  }
+}
+.trips .text h2 {
+  color: var(--light-color);
+  font-family: var(--heading-font);
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.trips .text p {
+  margin: 20px 0;
+  font-family: var(--normal-font);
+  color: var(--light-color);
+  margin-bottom: 30px;
+}
+.trips .text span {
+  margin-top: 30px;
+  background-color: var(--light-color);
+  padding: 10px 40px;
+  color: var(--dark-color);
+  border-radius: 30px;
+  cursor: pointer;
+}
+.trips .text span:hover {
+  transform: scale(1.2);
+  color: var(--light-color);
+  background-color: transparent;
+  border: 2px solid var(--light-color);
+}
+/*=========================
+========  booking  ==========
+ ========================== */
+.booking {
+  background-color: var(--dark-color);
+}
+.booking .container {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.booking .container .card {
+  width: 30%;
+  background-color: #eee;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .booking .container .card {
+    width: 40%;
+    margin: 10px auto;
+  }
+  .booking .container .card .btn {
+    display: block;
+  }
+}
+@media (max-width: 450px) {
+  .booking .container .card {
+    width: 80%;
+    margin: 10px auto;
+  }
+  .booking .container .card .btn {
+    display: block;
+  }
+}
+.booking .container .card img {
+  width: 80%;
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.booking .container .card img:hover {
+  border: 4px solid var(--main-color);
+}
+.booking .container .card h2 {
+  font-family: var(--heading-font);
+  color: var(--main-color);
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+.booking .container .card p {
+  margin-bottom: 20px;
+  font-family: var(--normal-font);
+  font-size: 12px;
+}
